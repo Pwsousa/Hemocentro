@@ -1,4 +1,4 @@
-package com.hemocentro.domain;
+package com.hemocentro.domain.doador;
 
 public class Endereco {
     private String logradouro;

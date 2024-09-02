@@ -1,8 +1,10 @@
-package com.hemocentro.domain;
+package com.hemocentro.domain.doador;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import com.hemocentro.domain.doacao.Doacao;
 
 public class Doador {
     
@@ -37,6 +39,6 @@ public class Doador {
                 + this.tipoSanguineo + ", listaDoacoes=" + listaDoacoes + "]";
     }
     
-
+    
 
 }
