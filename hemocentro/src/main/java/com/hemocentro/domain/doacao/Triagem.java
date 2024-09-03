@@ -3,17 +3,20 @@ package com.hemocentro.domain.doacao;
 import com.hemocentro.domain.doacao.triagem.EmAnalise;
 import com.hemocentro.domain.doacao.triagem.Finalizado;
 import com.hemocentro.domain.doacao.triagem.SituacaoTriagem;
+import com.hemocentro.domain.doador.Doador;
 
 public class Triagem {
     private SituacaoTriagem situacao;
     private double nivelHemogloblina;
     private boolean doencas;
     private PressaoArterial pressaoArterial;
+    private Doador doador;
 
-    public Triagem(double nivelHemogloblina, boolean doencas){
+    public Triagem(double nivelHemogloblina, boolean doencas, Doador doador){
         this.nivelHemogloblina = nivelHemogloblina;
         this.doencas = doencas;
         this.situacao =  new EmAnalise();
+        this.doador = doador;
     }
 
     public void aprovar(){
@@ -34,6 +37,10 @@ public class Triagem {
 
     public SituacaoTriagem getSituacao(){
         return situacao;
+    }
+
+    public Doador getDoador(){
+        return this.doador;
     }
 
     public boolean isFinalizado(){

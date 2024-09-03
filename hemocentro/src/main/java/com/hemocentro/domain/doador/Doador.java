@@ -40,10 +40,13 @@ public class Doador {
     }
     
 
-    public void novaDoacao(Triagem triagem, Doacao doacao){
-        if (triagem.isFinalizado()) {
-            listaDoacoes.add(doacao);
-        }
+    public void novaDoacao(Doacao doacao){
+        listaDoacoes.add(doacao);
+        
+    }
+
+    public List<Doacao> exibirDoacoes(){
+        return listaDoacoes;
     }
 
 }

@@ -21,13 +21,13 @@ public class Main {
 
         System.out.println(d);
 
-        Triagem t = new Triagem(15.9,false);
+        Triagem t = new Triagem(15.9,false,d);
         t.fazerTriagem();
         t.finalizar();
         System.out.println(t.isFinalizado());
 
         Doacao d1Doacao = new Doacao(t,TipoBolsa.PLAQUETAS, 500.00);
-        System.out.println(d1Doacao);
+        System.out.println(d.exibirDoacoes());
 
     }
 }

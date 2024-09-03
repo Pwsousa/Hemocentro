@@ -8,6 +8,8 @@ import java.util.Random;
 import com.hemocentro.domain.doacao.triagem.EmAnalise;
 import com.hemocentro.domain.doacao.triagem.Finalizado;
 import com.hemocentro.domain.doacao.triagem.SituacaoTriagem;
+import com.hemocentro.domain.doador.Doador;
+import com.hemocentro.domain.laboratorio.Laboratorio;
 import com.hemocentro.exception.DomainException;
 
 public class Doacao {
@@ -22,6 +24,7 @@ public class Doacao {
             this.calendar = Calendar.getInstance();
             this.tipoBolsas = tipoBolsa;
             this.volumeSangue = volumeSangue;
+            triagem.getDoador().novaDoacao(this);
         }
         else {
             throw new DomainException("Doacao nao pode ser finalizada");
@@ -33,5 +36,7 @@ public class Doacao {
         return "Doacao [Data =" + calendar.getTime() + "]";
     }
 
-    
+    public void enviarParaAnalise(Laboratorio laboratorio){
+        laboratorio.receberBolsa(this);
+    }
 }
