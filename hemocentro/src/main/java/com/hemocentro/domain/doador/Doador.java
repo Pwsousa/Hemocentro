@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import com.hemocentro.domain.doacao.Doacao;
+import com.hemocentro.domain.doacao.Triagem;
 
 public class Doador {
     
@@ -32,13 +33,17 @@ public class Doador {
 
     }
 
-
     @Override
     public String toString() {
         return "Doador [cpf=" + cpf + ", nome=" + nome + ", dataNascimento=" + dataNascimento.getTime() + ", tipoSanguineo="
                 + this.tipoSanguineo + ", listaDoacoes=" + listaDoacoes + "]";
     }
     
-    
+
+    public void novaDoacao(Triagem triagem, Doacao doacao){
+        if (triagem.isFinalizado()) {
+            listaDoacoes.add(doacao);
+        }
+    }
 
 }

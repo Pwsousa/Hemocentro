@@ -3,6 +3,8 @@ package com.hemocentro;
 import java.util.Calendar;
 import java.util.Calendar.Builder;
 
+import com.hemocentro.domain.doacao.Doacao;
+import com.hemocentro.domain.doacao.TipoBolsa;
 import com.hemocentro.domain.doacao.Triagem;
 import com.hemocentro.domain.doacao.triagem.SituacaoTriagem;
 import com.hemocentro.domain.doador.Doador;
@@ -19,10 +21,13 @@ public class Main {
 
         System.out.println(d);
 
-        Triagem t = new Triagem(16.9,true);
-        
+        Triagem t = new Triagem(15.9,false);
         t.fazerTriagem();
-        System.out.println(t.getSituacao());
+        t.finalizar();
+        System.out.println(t.isFinalizado());
+
+        Doacao d1Doacao = new Doacao(t,TipoBolsa.PLAQUETAS, 500.00);
+        System.out.println(d1Doacao);
 
     }
 }
