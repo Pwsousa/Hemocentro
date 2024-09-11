@@ -37,6 +37,6 @@ public class Doacao {
     }
 
     public void enviarParaAnalise(Laboratorio laboratorio){
-        laboratorio.receberBolsa(this);
+        laboratorio.receberBolsa(this,true,true);
     }
 }
