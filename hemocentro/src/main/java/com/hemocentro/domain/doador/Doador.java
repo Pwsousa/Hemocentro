@@ -49,4 +49,7 @@ public class Doador {
         return listaDoacoes;
     }
 
+    public TipoSanguineo getTipoSanguineo(){
+        return this.tipoSanguineo;
+    }
 }

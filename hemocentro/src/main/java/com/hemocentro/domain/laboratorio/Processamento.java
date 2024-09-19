@@ -1,6 +1,5 @@
 package com.hemocentro.domain.laboratorio;
 
-import com.hemocentro.domain.doacao.triagem.Finalizado;
 import com.hemocentro.domain.laboratorio.processamento.EmAnalise;
 import com.hemocentro.domain.laboratorio.processamento.SituacaoProcessamento;
 

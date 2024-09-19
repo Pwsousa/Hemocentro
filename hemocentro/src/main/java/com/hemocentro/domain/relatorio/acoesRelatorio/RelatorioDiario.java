@@ -1,0 +1,12 @@
+package com.hemocentro.domain.relatorio.acoesRelatorio;
+
+import com.hemocentro.domain.relatorio.Relatorio;
+
+public class RelatorioDiario implements AcaoGeraRelatorio{
+
+    @Override
+    public void gereRelatorio(Relatorio relatorio) {
+       System.out.println("Exibindo relatorio diário");
+    }
+    
+}

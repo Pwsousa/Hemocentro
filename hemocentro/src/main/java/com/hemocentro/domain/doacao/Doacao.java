@@ -9,6 +9,7 @@ import com.hemocentro.domain.doacao.triagem.EmAnalise;
 import com.hemocentro.domain.doacao.triagem.Finalizado;
 import com.hemocentro.domain.doacao.triagem.SituacaoTriagem;
 import com.hemocentro.domain.doador.Doador;
+import com.hemocentro.domain.doador.TipoSanguineo;
 import com.hemocentro.domain.laboratorio.Laboratorio;
 import com.hemocentro.exception.DomainException;
 
@@ -17,6 +18,7 @@ public class Doacao {
     private Triagem triagem;
     private double volumeSangue;
     private TipoBolsa tipoBolsas;
+    private TipoSanguineo tipoSanguineo;
     private Calendar calendar;
 
     public Doacao(Triagem triagem, TipoBolsa tipoBolsa, double volumeSangue){
@@ -24,7 +26,8 @@ public class Doacao {
             this.calendar = Calendar.getInstance();
             this.tipoBolsas = tipoBolsa;
             this.volumeSangue = volumeSangue;
-            triagem.getDoador().novaDoacao(this);
+            this.tipoSanguineo = triagem.getDoador().getTipoSanguineo();
+            this.triagem.getDoador().novaDoacao(this);
         }
         else {
             throw new DomainException("Doacao nao pode ser finalizada");
